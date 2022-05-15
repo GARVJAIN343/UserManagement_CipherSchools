@@ -66,16 +66,17 @@ img{
 }
 .field{
   margin-top: 20px;
-  width: 982px;
+  width: 1000px;
   display: flex;
 
 }
 .field>input{
     width:88%;
-    height: 42px;
+    height: 40px;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid whitesmoke;
     outline-style: none;
-    background-color: transparent;
-    overflow:auto;
+    border-right: 0px;
 }
 
 .field>a{
@@ -84,7 +85,7 @@ img{
   color: white;
   text-decoration: none;
   padding: 10px 22px;
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 500;
   border-radius: 0px 5px 5px 0px;
   display: inline-block;
@@ -156,7 +157,7 @@ img{
   top:295px;
   overflow-y:auto;
   max-height:295px;
-  width: 865px;
+  width: 880px;
   box-shadow: 3px 3px 2px whitesmoke, 
               -3px -3px 2px whitesmoke;
   border-radius: 5px;
@@ -173,8 +174,7 @@ img{
 
 #garv{
   display: flex;
-  padding-left: 5px;
-  width: 500px;
+  padding-left: 15px;
 }
 
 .deletebtn{
@@ -194,21 +194,4 @@ img{
   justify-content: center;
   align-items: center;
   margin-left: 10px;
-}
-
-.chips{
-    padding: 3px;
-    display: flex;
-    width:88%;
-    height: 42px;
-    border-radius: 5px 0px 0px 5px;
-    border: 2px solid whitesmoke;
-    /* outline-style: none; */
-    border-right: 0px;
-    overflow: auto;
-    background-color: transparent;
-    box-shadow: 5px;
-}
-::-webkit-scrollbar {
-  display: none;
 }
