@@ -23,9 +23,9 @@ const DropDown = ({filterData, setList, list}) => {
                 return (
             
             <div className="customer customercard" key={index} onClick={()=>{clickHandle(curEle)}}>
-              <div className='avtar'><h5>{str}</h5></div>
+              <div id='icon' className='avtar'><h5>{str}</h5></div>
               <div className='name'><h4>{curEle.name}</h4>
-                    <span><FaUserTie style={{color:'grey', margin:2}}/> {curEle.designation} <BsFillCircleFill style={{color:'grey' , paddingTop:6}}/> {curEle.email}</span>
+                    <span id='detail'><FaUserTie style={{color:'grey', margin:2}}/> {curEle.designation} <BsFillCircleFill style={{color:'grey' , paddingTop:6}}/> {curEle.email}</span>
               </div>
               </div>
      

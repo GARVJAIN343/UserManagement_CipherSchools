@@ -11,6 +11,7 @@ const CustomerData = () => {
   const [list, setList] = useState([]);
   const [finalList, setFinalList] = useState([]);
 
+  
   useEffect(()=>{
     let filterData = Data.filter((element)=>{
       if (element.name.toLowerCase().includes(value.toLowerCase()))
@@ -35,11 +36,9 @@ const CustomerData = () => {
   const addItem = (e) => { 
     e.preventDefault();
     let answer = list.map((event) => {
-      console.log(event);
       let propertyValues = Object.values(event);
       return (propertyValues);
     })
-
      setFinalList(answer);
     setDropDown([]); 
     setValue("");
@@ -52,9 +51,7 @@ const CustomerData = () => {
 };  
 
 const handleDelete1 = (chipToDelete) => {
-    console.log(chipToDelete);
    let chipDel = list.filter((chip) => {
-     console.log(chip);
     return(chip.id !== chipToDelete.id)
   });
   setList(chipDel);
@@ -66,26 +63,28 @@ const handleDelete1 = (chipToDelete) => {
    
               <div className='cardHeading'><h3>Customer Success Managers</h3></div>
               <div className='field'>
-              <div className='chips'>
+              <div className='innerField'>
+              <div className="chips">              
               {list.map((item, index) => ( 
-              <Chip
-              style={{backgroundColor:'#d7dcff', color:'#2235a3'}}
+              <Chip style={{backgroundColor:'#d7dcff', color:'#2235a3'}}
               key={index}
               label={item.name}
               onDelete={()=>{handleDelete1(item)}}/>
               ))}
-              <input style={{border:0 , outline:0}} id='garv' type='text' placeholder="Add by Name or email" value={value} onChange={changeHandler}>
+              <input style={{border:0,outline:0}}id='garv' type='text' placeholder="Add by Name or email" value={value} onChange={changeHandler}>
               </input> 
               </div>
-              <DropDown 
+              <DropDown
               setList={setList}
               list={list}
               filterData={dropDown}/>
-              <a href='#' onClick={addItem} >Add CSM</a>
+              </div>
+              <a href='#' onClick={addItem}><span>Add CSM</span></a>
               </div>
               <div className='allCustomer'>
            {
               finalList.map((curEle,index)=>{
+                console.log(curEle);
               let avtar = curEle[1];
               let nameArray = avtar.split(" ");
               let firstChar = nameArray[0][0].toUpperCase();
@@ -95,9 +94,9 @@ const handleDelete1 = (chipToDelete) => {
                   return (
               
               <div className='customer' key={index}>
-                <div className='cardavtar'><h5>{str}</h5></div>
+                <div  className='cardavtar'><h5>{str}</h5></div>
                 <div className='name'><h4>{curEle[1]}</h4>
-                      <span>{curEle[3]}</span>
+                      <span id="detail2">{curEle[3]}</span>
                 </div>
                 <div className='delete'>
 

@@ -13,7 +13,7 @@ body{
 }
 
 .App{
-  height: 70vh;
+  min-height: 70vh;
   width: 70vw;
   background-color:#f8f9ff;
   padding: 20px;
@@ -32,8 +32,8 @@ header{
   height: 50px;
 }
 img{
-  width: 50px;
-  height: 50px;
+  width:100%;
+  height:100%;
 }
 .description {
   display: flex;
@@ -52,61 +52,108 @@ img{
   line-height:25px;
 }
 .card{
-  height:80%;
+  display: flex;
+  flex-direction: column;
+  min-height:22rem;
   margin-top: 15px;
   background: white;
   border-radius: 10px;
   padding: 10px 20px;
   box-shadow: 7px 7px 7px whitesmoke,
               -7px -7px 7px whitesmoke;
+  width:auto;
 }
 
 .cardHeading{
   margin-top: 10px;
 }
+
 .field{
-  margin-top: 20px;
-  width: 982px;
   display: flex;
+  width:auto;
+  height: 40px;
+  margin-top: 20px;
+  /* flex-wrap: wrap; */
 
 }
-.field>input{
-    width:88%;
-    height: 42px;
-    outline-style: none;
-    background-color: transparent;
-    overflow:auto;
+
+.innerField{
+  width:87%;
+}
+.chips{
+  display:flex;
+  width:auto;
+  min-height: 37px;
+  border-radius: 5px 0px 0px 5px;
+  border: 2px solid whitesmoke;
+  border-right: 0px;
+  background-color: transparent;
+  box-shadow: 5px;
+  gap: 3px;
+  overflow: auto;
+  align-items: center;
+}
+
+#garv{
+  display: flex;
+  padding-left: 15px;
+  width:auto;
+  height: 37px;
+  flex: 1;
+  border-right: 0px;
+  outline-style: none;
 }
 
 .field>a{
+  display:flex;
+  height: auto;
   border: 1px solid #1e31a1;
   background: #1e31a1;
   color: white;
   text-decoration: none;
-  padding: 10px 22px;
   font-size: 13px;
   font-weight: 500;
   border-radius: 0px 5px 5px 0px;
-  display: inline-block;
+  align-items: center;
+  padding: 0px 5px;
+  text-align: center;
  }
+ .dropdown{
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position:absolute;
+	margin-top:0.3rem;
+  z-index: 10;
+  background-color: white;
+  overflow-y:auto;
+  height:295px;
+  width:55.5%;
+  box-shadow: 3px 3px 2px whitesmoke, 
+              -3px -3px 2px whitesmoke;
+  border-radius: 5px;
+}
+
+.allCustomer{
+  display: flex;
+  margin-top: 30px;
+  width: 97%;
+  height: 28vh;
+  flex-direction: column;
+  overflow-y: scroll; 
+  
+}
 
 .customer{
   display: flex;
   height: 60px;
   width: 100%;
-  padding: 36px 5px;
+  padding: 27px 5px;
   border-radius: 5px;
   border: 1px solid whitesmoke;
   align-items: center;
 }
-.allCustomer{
-  display: flex;
-  margin-top: 30px;
-  width: 97%;
-  max-height: 30vh;
-  flex-direction: column;
-  overflow-y: scroll; 
-}
+
 .avtar{
   display: flex;
   height: 35px;
@@ -127,7 +174,6 @@ img{
   font-size: 11px;
   font-weight: 500;
   display: flex;
-  /* gap: 5px; */
   font-size: 12px;
 }
 
@@ -142,46 +188,21 @@ img{
   padding-left: 5px;
   font-size: 17px;
 }
-.mantine-MultiSelect-dropdown{
-  display: flex;
-  flex-direction: column;
-  
-}
-.dropdown{
-  cursor: pointer;
-	margin: 15px 0;
-  z-index: 10;
-  position: absolute;
-  background-color: white;
-  top:295px;
-  overflow-y:auto;
-  max-height:295px;
-  width: 865px;
-  box-shadow: 3px 3px 2px whitesmoke, 
-              -3px -3px 2px whitesmoke;
-  border-radius: 5px;
-}
 
 ::-webkit-scrollbar {
   width: 0; 
   background: transparent; 
+  display: none;
 }
 
 .customercard:hover{
   background-color: whitesmoke;
 }
 
-#garv{
-  display: flex;
-  padding-left: 5px;
-  width: 500px;
-}
-
 .deletebtn{
   background-color: transparent;
   border: 0px;
   cursor: pointer;
-	/* margin: 15px 0; */
 }
 
 .cardavtar{
@@ -194,21 +215,61 @@ img{
   justify-content: center;
   align-items: center;
   margin-left: 10px;
+  padding: 0px 6px;
 }
 
-.chips{
-    padding: 3px;
+@media only screen and (max-width:1200px) {
+
+  #root{
+    width: 100vw;
+    height:100vh;
     display: flex;
-    width:88%;
-    height: 42px;
-    border-radius: 5px 0px 0px 5px;
-    border: 2px solid whitesmoke;
-    /* outline-style: none; */
-    border-right: 0px;
-    overflow: auto;
-    background-color: transparent;
-    box-shadow: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+  .App{
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card{
+    height: 85%;
+  }
+  
+  .allCustomer{
+    width:100%;
+    height:100%;
+  }
+  .dropdown{
+    width:80%;
+  }
+  
 }
-::-webkit-scrollbar {
-  display: none;
+
+@media only screen and (max-width:440px) {
+     
+      #detail{
+        display: none;
+      }
+      #icon{
+        padding: 0px 6px;
+      }
+    
+}
+@media only screen and (max-width:515px) {
+      #detail2{
+        display: none;
+      }
+}
+
+@media only screen and (max-width:375px) {
+  .description>h1{
+    font-size: 23px;
+  }
+  .description>p{
+    font-size: 15px;
+  }
 }
