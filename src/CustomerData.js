@@ -39,7 +39,7 @@ const CustomerData = () => {
       let propertyValues = Object.values(event);
       return (propertyValues);
     })
-     setFinalList(answer);
+    setFinalList(answer);
     setDropDown([]); 
     setValue("");
     setList([]);
@@ -85,7 +85,7 @@ const handleDelete1 = (chipToDelete) => {
            {
               finalList.map((curEle,index)=>{
                 console.log(curEle);
-              let avtar = curEle[1];
+              let avtar = curEle  [1];
               let nameArray = avtar.split(" ");
               let firstChar = nameArray[0][0].toUpperCase();
               let lastChar = nameArray[nameArray.length - 1][0].toUpperCase();
